@@ -9,6 +9,8 @@ from app import app
 from flask import render_template, request, redirect, url_for, flash
 from app import mail
 from flask_mail import Message
+from forms import ContactForm
+
 
 
 ###
@@ -35,7 +37,7 @@ def contact():
         email = form.email.data
         subject = request.form['subject']
         message = request.form['message']
-        msg = Message(subject, sender=(name,email), recipients=["need_an_a_plus@inbox.mailtrap.io"])
+        msg = Message(subject, sender=(name,email), recipients=["bf1f41ce9d-c9f420@inbox.mailtrap.io"])
         msg.body = message
         mail.send(msg)
         flash('Message Sent')
